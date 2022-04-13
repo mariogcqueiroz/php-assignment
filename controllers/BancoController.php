@@ -3,10 +3,23 @@ namespace app\controllers;
 use Yii;
 use yii\web\Controller;
 use app\models\Banco;
+use yii\web\NotFoundHttpException;
 
 
 class BancoController extends Controller
 {
+
+    public function actionView($id) {
+        $model=Banco::findOne(['id'=>$id]);
+        if ($model!=Null){
+            return $this->render('view', [
+                'model' => $model
+            ]);
+        }
+        throw new NotFoundHttpException
+        ('Número do Banco não econtrado');
+
+    }
 
     public function actionCreate(){
         $model = new Banco();
