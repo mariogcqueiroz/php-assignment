@@ -38,6 +38,8 @@ class SiteController extends Controller
         ];
     }
 
+
+
     /**
      * {@inheritdoc}
      */
@@ -62,6 +64,17 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
+    }
+
+    /**
+     * Hello Word.
+     *
+     * @return string
+     */
+    //http://localhost:680/index.php?r=site/hello-world&message=Hello
+    public function actionHelloWorld($message)
+    {
+        return $this->render('hello',['message'=> $message ]);
     }
 
     /**

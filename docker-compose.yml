@@ -1,9 +1,39 @@
-version: '2'
+version: '3.5'
+
 services:
-  php:
-    image: yiisoftware/yii2-php:7.4-apache
+  db:
+    image: phdcoder/postgresbr
+    restart: always
     volumes:
-      - ~/.composer-docker/cache:/root/.composer/cache:delegated
-      - ./:/app:delegated
+      - base_cliente:/var/lib/postgresql/data/pgdata
+      - ./initdb:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_DB: easysell
+      POSTGRES_PASSWORD: app2022
+      PGDATA: /var/lib/postgresql/data/pgdata
+      LANG: pt_BR.utf8
     ports:
-      - '8000:80'
+      - "5455:5432"
+
+  app:
+    depends_on:
+      - db
+    image: dmstr/php-yii2:latest-nginx
+    restart: always
+    environment:
+      - PHP_ENABLE_XDEBUG=1
+      - DBHOST= db
+      - DBNAME= easysell
+      - DBUSER= app
+      - DBPASS= app2022
+    volumes:
+      - .:/app
+    ports:
+      - "5880:80"
+      - "8443:443"
+    #Se seu host roda linux, substitua host.docker.internal com o resultado de $ ip route | grep docker0 | awk '{print $9}'
+    command: bash -c "chown -R www-data:www-data /app/web/assets && chown -R www-data:www-data  /app/runtime &&  chmod -R 755 /app/web/assets && chmod -R 755 /app/runtime && export XDEBUG_CONFIG=\"remote_connect_back=0 remote_enable=1 remote_host=host.docker.internal\" && supervisord -c  /etc/supervisor/supervisord.conf"
+volumes:
+  base_cliente:
+    external: true
