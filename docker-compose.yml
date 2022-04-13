@@ -23,17 +23,20 @@ services:
     restart: always
     environment:
       - PHP_ENABLE_XDEBUG=1
-      - DBHOST= db
-      - DBNAME= easysell
-      - DBUSER= app
-      - DBPASS= app2022
+      - DBHOST=db
+      - DBNAME=easysell
+      - DBUSER=app
+      - DBPASS=app2022
     volumes:
       - .:/app
     ports:
       - "5880:80"
       - "8443:443"
     #Se seu host roda linux, substitua host.docker.internal com o resultado de $ ip route | grep docker0 | awk '{print $9}'
-    command: bash -c "chown -R www-data:www-data /app/web/assets && chown -R www-data:www-data  /app/runtime &&  chmod -R 755 /app/web/assets && chmod -R 755 /app/runtime && export XDEBUG_CONFIG=\"remote_connect_back=0 remote_enable=1 remote_host=host.docker.internal\" && supervisord -c  /etc/supervisor/supervisord.conf"
+    command: bash -c "chown -R www-data:www-data /app/web/assets && chown -R www-data:www-data  /app/runtime
+                    && chmod -R 755 /app/web/assets && chmod -R 755 /app/runtime
+                    && export XDEBUG_CONFIG=\"remote_connect_back=0 remote_enable=1 remote_host=host.docker.internal\"
+                    && supervisord -c  /etc/supervisor/supervisord.conf"
 volumes:
   base_cliente:
     external: true
