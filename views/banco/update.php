@@ -5,11 +5,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Banco */
 
-$this->title = 'Create Banco';
+$this->title = 'Update Banco: ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Bancos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="banco-create">
+<div class="banco-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

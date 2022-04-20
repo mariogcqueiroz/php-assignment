@@ -36,7 +36,7 @@ class Banco extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome'], 'required'],
+            [['nome','numero'], 'required'],
             [['nome', 'numero'], 'string'],
             [['ispb'], 'default', 'value' => null],
             [['ispb'], 'integer'],

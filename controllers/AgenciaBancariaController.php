@@ -2,16 +2,16 @@
 
 namespace app\controllers;
 
-use app\models\Banco;
-use app\models\BancoSearch;
+use app\models\AgenciaBancaria;
+use app\models\AgenciaBancariaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * BancoController implements the CRUD actions for Banco model.
+ * AgenciaBancariaController implements the CRUD actions for AgenciaBancaria model.
  */
-class BancoController extends Controller
+class AgenciaBancariaController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,13 +32,13 @@ class BancoController extends Controller
     }
 
     /**
-     * Lists all Banco models.
+     * Lists all AgenciaBancaria models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new BancoSearch();
+        $searchModel = new AgenciaBancariaSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -48,7 +48,7 @@ class BancoController extends Controller
     }
 
     /**
-     * Displays a single Banco model.
+     * Displays a single AgenciaBancaria model.
      * @param int $id ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
@@ -61,13 +61,13 @@ class BancoController extends Controller
     }
 
     /**
-     * Creates a new Banco model.
+     * Creates a new AgenciaBancaria model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Banco();
+        $model = new AgenciaBancaria();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -83,7 +83,7 @@ class BancoController extends Controller
     }
 
     /**
-     * Updates an existing Banco model.
+     * Updates an existing AgenciaBancaria model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return string|\yii\web\Response
@@ -103,7 +103,7 @@ class BancoController extends Controller
     }
 
     /**
-     * Deletes an existing Banco model.
+     * Deletes an existing AgenciaBancaria model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return \yii\web\Response
@@ -117,15 +117,15 @@ class BancoController extends Controller
     }
 
     /**
-     * Finds the Banco model based on its primary key value.
+     * Finds the AgenciaBancaria model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Banco the loaded model
+     * @return AgenciaBancaria the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Banco::findOne(['id' => $id])) !== null) {
+        if (($model = AgenciaBancaria::findOne(['id' => $id])) !== null) {
             return $model;
         }
 
