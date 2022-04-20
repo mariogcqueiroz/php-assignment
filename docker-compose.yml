@@ -33,8 +33,17 @@ services:
       - "5880:80"
       - "8443:443"
     #Se seu host roda linux, substitua host.docker.internal com o resultado de $ ip route | grep docker0 | awk '{print $9}'
-    command: bash -c "chown -R www-data:www-data /app/web/assets && chown -R www-data:www-data  /app/runtime
-                    && chmod -R 755 /app/web/assets && chmod -R 755 /app/runtime
+    command: bash -c "chown -R www-data:www-data /app/web/assets
+                    && chown -R www-data:www-data  /app/runtime
+                    && chown -R www-data:www-data  /app/models
+                    && chown -R www-data:www-data  /app/controllers
+                    && chown -R www-data:www-data  /app/views
+                    && chmod -R 755 /app/web/assets
+                    && chmod -R 755 /app/runtime
+                    && chmod -R 755 /app/models
+                    && chmod -R 755 /app/views
+                    && chmod -R 755 /app/controllers
+                    && ./yii migrate --interactive=0
                     && export XDEBUG_CONFIG=\"remote_connect_back=0 remote_enable=1 remote_host=host.docker.internal\"
                     && supervisord -c  /etc/supervisor/supervisord.conf"
 volumes:
