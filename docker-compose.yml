@@ -45,6 +45,7 @@ services:
                     && chmod -R 755 /app/controllers
                     && chmod +x /app/yii
                     && ./yii migrate --interactive=0
+                    #Se seu host roda linux, substitua host.docker.internal com o resultado de $ ip route | grep docker0 | awk '{print $9}'
                     && export XDEBUG_CONFIG=\"remote_connect_back=0 remote_enable=1 remote_host=host.docker.internal\"
                     && supervisord -c  /etc/supervisor/supervisord.conf"
 volumes:

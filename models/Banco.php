@@ -37,7 +37,7 @@ class Banco extends \yii\db\ActiveRecord
     {
         return [
             [['nome','numero'], 'required'],
-            [['nome', 'numero'], 'string'],
+            [['nome','numero'], 'string'],
             [['ispb'], 'default', 'value' => null],
             [['ispb'], 'integer'],
         ];

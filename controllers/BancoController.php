@@ -68,9 +68,8 @@ class BancoController extends Controller
     public function actionCreate()
     {
         $model = new Banco();
-
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
+            if ($model->load($this->request->post()) && $model->save() ) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
@@ -81,6 +80,40 @@ class BancoController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function actionCreate2()
+    {
+        $model = new Banco();
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post())  ) {
+                $db = new \PDO("pgsql:host=db;dbname=easysell", 'app', 'app2022');
+
+                //asdasd',12312 ); drop table auditlog; select ('a
+                $sql = "insert into banco(nome,numero,ispb)
+                  values( '$model->nome','$model->numero',$model->ispb) ";
+
+                $db->exec($sql);
+                //Maneira correta de se usar constultas customizadas
+                /*
+                $connection = \Yii::$app->db;
+                $connection->createCommand("insert into banco(nomeq,numero,ispb )
+                values( :nome,:numero,:ispb)")
+                    ->bindValue(':nome', $model->nome)
+                    ->bindValue(':numero', $model->numero)
+                    ->bindValue(':ispb', $model->ispb)
+                    ->execute();*/
+                $model= Banco::findone(['numero'=>$model->numero]);
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+        } else {
+            $model->loadDefaultValues();
+        }
+
+        return $this->render('create', [
+            'model' => $model,
+        ]);
+    }
+
 
     /**
      * Updates an existing Banco model.
