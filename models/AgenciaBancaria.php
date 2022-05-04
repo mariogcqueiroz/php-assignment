@@ -25,6 +25,7 @@ use Yii;
  */
 class AgenciaBancaria extends \yii\db\ActiveRecord
 {
+    public $tipoarray = [0=>'movel',1=>'fixo'];
     /**
      * {@inheritdoc}
      */
@@ -41,12 +42,30 @@ class AgenciaBancaria extends \yii\db\ActiveRecord
         return [
             [['id_banco', 'agencia'], 'required'],
             [['id_banco', 'fone', 'tipo', 'fone1', 'tipo1'], 'default', 'value' => null],
-            [['id_banco', 'fone', 'fone1', 'tipo1'], 'integer'],
-            [['tipo'], 'integer', 'min'=>0, 'max' => 1],
+            [['id_banco', 'tipo','tipo1'], 'integer'],
+            [['fone', 'fone1'], 'integer' , 'enableClientValidation' => false],
+            [['id_banco'], 'integer','min'=>0, 'max' => 2147483648],
+            [['tipo','tipo1'], 'integer', 'min'=>0, 'max' => 1],
+            [['fone','fone1'], 'integer','min'=>1000000000, 'max' => 99999999999,
+                'message' => 'Telefones devem possuir 11 dígitos',
+                'enableClientValidation' => false],
+            [['fone'],'telefonesdistintos'],
+            [['fone'],'required', 'when'=> function ($model){
+                        return $model->fone1==null;
+            }],
+            [['fone1'],'required', 'when'=> function ($model){
+                return $model->fone1==null;
+            }],
             [['endereco', 'agencia', 'nome_agencia'], 'string'],
             [['id_banco'], 'exist',
                 'skipOnError' => true, 'targetClass' => Banco::className(), 'targetAttribute' => ['id_banco' => 'id']],
         ];
+    }
+
+    public function telefonesdistintos($attribute, $params, $validator){
+        if ( $this->fone == $this->fone1){
+            $this->addError($attribute,'Os telefones não podem ser iguais');
+        }
     }
 
     /**
@@ -56,15 +75,29 @@ class AgenciaBancaria extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_banco' => 'Id Banco',
-            'endereco' => 'Endereco',
-            'fone' => 'Fone',
+            'id_banco' => 'Banco',
+            'endereco' => 'Endereço',
+            'fone' => 'Telefone 1',
             'tipo' => 'Tipo',
-            'fone1' => 'Fone 1',
-            'tipo1' => 'Tipo 1',
-            'agencia' => 'Agencia',
-            'nome_agencia' => 'Nome Agencia',
+            'fone1' => 'Telefone 2',
+            'tipo1' => 'Tipo',
+            'agencia' => 'Número da Agência',
+            'nome_agencia' => 'Nome da Agência',
         ];
+    }
+
+    public function  getTiponome ()
+    {
+        return $this->tipoarray[$this->tipo];
+    }
+    public function  getTipo1nome ()
+    {
+        return $this->tipoarray[$this->tipo1];
+    }
+
+    public function  getBanconome ()
+    {
+        return $this->banco->nome;
     }
 
     /**
