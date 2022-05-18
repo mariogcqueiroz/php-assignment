@@ -111,4 +111,13 @@ return array (
       '@yii/bootstrap4' => $vendorDir . '/yiisoft/yii2-bootstrap4/src',
     ),
   ),
+  'kartik-v/yii2-bootstrap4-dropdown' => 
+  array (
+    'name' => 'kartik-v/yii2-bootstrap4-dropdown',
+    'version' => 'dev-master',
+    'alias' => 
+    array (
+      '@kartik/bs4dropdown' => $vendorDir . '/kartik-v/yii2-bootstrap4-dropdown/src',
+    ),
+  ),
 );

@@ -20,6 +20,7 @@ return array(
     'kartik\\form\\' => array($vendorDir . '/kartik-v/yii2-widget-activeform/src'),
     'kartik\\dialog\\' => array($vendorDir . '/kartik-v/yii2-dialog/src'),
     'kartik\\builder\\' => array($vendorDir . '/kartik-v/yii2-builder/src'),
+    'kartik\\bs4dropdown\\' => array($vendorDir . '/kartik-v/yii2-bootstrap4-dropdown/src'),
     'kartik\\base\\' => array($vendorDir . '/kartik-v/yii2-krajee-base/src'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
