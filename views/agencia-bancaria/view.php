@@ -26,13 +26,23 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
+
+
+    <?php
+    if(  preg_match( '/^(\d{2})(\d{5})(\d{4})$/', $model->fone,  $matches ) )
+    {
+        $result = '('.$matches[1] . ')' .$matches[2] . '-' . $matches[3];
+    }
+    echo DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
             'banconome',
             'endereco:ntext',
-            'fone',
+            [
+                'label' => 'Telefone',
+                'value' => $result,
+            ],
             'tiponome',
             'fone1',
             'tipo1nome',

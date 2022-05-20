@@ -25,7 +25,7 @@ use Yii;
  */
 class AgenciaBancaria extends \yii\db\ActiveRecord
 {
-    public $tipoarray = [0=>'movel',1=>'fixo'];
+    public  static $tipoarray = [0=>'movel',1=>'fixo'];
     /**
      * {@inheritdoc}
      */
@@ -77,10 +77,12 @@ class AgenciaBancaria extends \yii\db\ActiveRecord
             'id' => 'ID',
             'id_banco' => 'Banco',
             'endereco' => 'Endereço',
-            'fone' => 'Telefone 1',
+            'fone' => 'Telefone',
             'tipo' => 'Tipo',
-            'fone1' => 'Telefone 2',
+            'fone1' => 'Telefone de contato',
             'tipo1' => 'Tipo',
+            'tiponome'=>'Tipo',
+            'tipo1nome'=>'Tipo',
             'agencia' => 'Número da Agência',
             'nome_agencia' => 'Nome da Agência',
         ];
@@ -88,11 +90,11 @@ class AgenciaBancaria extends \yii\db\ActiveRecord
 
     public function  getTiponome ()
     {
-        return $this->tipoarray[$this->tipo];
+        return AgenciaBancaria::$tipoarray[$this->tipo];
     }
     public function  getTipo1nome ()
     {
-        return $this->tipoarray[$this->tipo1];
+        return AgenciaBancaria::$tipoarray[$this->tipo1];
     }
 
     public function  getBanconome ()

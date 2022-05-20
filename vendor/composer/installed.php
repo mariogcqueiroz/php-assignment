@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '7acc09c2c8a0f2910775bd734ce0a479da97c81f',
+        'reference' => 'fba29d5f69fad03a24786258426e8c701f9c7796',
         'name' => 'yiisoft/yii2-app-basic',
         'dev' => true,
     ),
@@ -207,6 +207,17 @@
             'aliases' => array(),
             'reference' => 'c94a94f120803a18554c1805ef2e539f8285f9a2',
             'dev_requirement' => true,
+        ),
+        'kartik-v/yii2-bootstrap4-dropdown' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'yii2-extension',
+            'install_path' => __DIR__ . '/../kartik-v/yii2-bootstrap4-dropdown',
+            'aliases' => array(
+                0 => '1.0.x-dev',
+            ),
+            'reference' => 'b65783f2de8ff0733e3787c853a53e9f13bebac1',
+            'dev_requirement' => false,
         ),
         'kartik-v/yii2-builder' => array(
             'pretty_version' => 'dev-master',
@@ -844,7 +855,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '7acc09c2c8a0f2910775bd734ce0a479da97c81f',
+            'reference' => 'fba29d5f69fad03a24786258426e8c701f9c7796',
             'dev_requirement' => false,
         ),
         'yiisoft/yii2-bootstrap4' => array(

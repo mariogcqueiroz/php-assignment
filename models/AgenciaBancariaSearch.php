@@ -66,7 +66,8 @@ class AgenciaBancariaSearch extends AgenciaBancaria
             'tipo1' => $this->tipo1,
         ]);
 
-        $query->andFilterWhere(['ilike', 'endereco', $this->endereco])
+        $query->andFilterWhere
+        (['ilike', 'endereco', $this->endereco])
             ->andFilterWhere(['ilike', 'agencia', $this->agencia])
             ->andFilterWhere(['ilike', 'nome_agencia', $this->nome_agencia]);
 

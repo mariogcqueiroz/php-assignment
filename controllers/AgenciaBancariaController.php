@@ -39,7 +39,8 @@ class AgenciaBancariaController extends Controller
     public function actionIndex()
     {
         $searchModel = new AgenciaBancariaSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $dataProvider = $searchModel->search
+        ($this->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,

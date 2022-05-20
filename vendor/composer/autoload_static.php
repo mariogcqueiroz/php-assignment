@@ -50,6 +50,7 @@ class ComposerStaticInit177cf46861ff5d4d9218624e88606fd1
             'kartik\\form\\' => 12,
             'kartik\\dialog\\' => 14,
             'kartik\\builder\\' => 15,
+            'kartik\\bs4dropdown\\' => 19,
             'kartik\\base\\' => 12,
         ),
         'c' => 
@@ -177,6 +178,10 @@ class ComposerStaticInit177cf46861ff5d4d9218624e88606fd1
         'kartik\\builder\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-builder/src',
+        ),
+        'kartik\\bs4dropdown\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-bootstrap4-dropdown/src',
         ),
         'kartik\\base\\' => 
         array (

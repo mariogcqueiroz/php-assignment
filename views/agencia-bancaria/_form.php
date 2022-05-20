@@ -1,5 +1,6 @@
 <?php
 
+use app\models\AgenciaBancaria;
 use app\models\Banco;
 use kartik\builder\Form;
 use kartik\form\ActiveForm;
@@ -65,7 +66,7 @@ use yii\helpers\Html;
                     'pluginOptions' => [
                         'allowClear' => true
                     ],
-                    'data' => $model->tipoarray
+                    'data' => AgenciaBancaria::$tipoarray
                 ]
             ],
             'fone1' => ['type' => Form::INPUT_WIDGET, 'columnOptions' => ['colspan' => 8],
@@ -87,7 +88,7 @@ use yii\helpers\Html;
                     'pluginOptions' => [
                         'allowClear' => true
                     ],
-                    'data' => $model->tipoarray
+                    'data' => AgenciaBancaria::$tipoarray
                 ]
             ],
         ]]);
