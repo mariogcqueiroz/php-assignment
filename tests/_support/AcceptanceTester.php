@@ -23,4 +23,16 @@ class AcceptanceTester extends \Codeception\Actor
    /**
     * Define custom actions here
     */
+    public function fillOutSelect2OptionField($selector, $value)
+    {
+        $I=$this;
+        $selector = substr($selector, 1);
+        $element = "#select2-{$selector}-container";
+        $I->waitForElementVisible($element);
+        $I->click($element);
+        $searchField = '.select2-search__field';
+        $I->waitForElementVisible($searchField);
+        $I->fillField($searchField, $value);
+        $I->pressKey($searchField, \Facebook\WebDriver\WebDriverKeys::ENTER);
+    }
 }

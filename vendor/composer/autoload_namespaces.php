@@ -6,6 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'PHPThumb\\Tests' => array($vendorDir . '/masterexploder/phpthumb/tests'),
+    'PHPThumb' => array($vendorDir . '/masterexploder/phpthumb/src'),
+    'Ikimea\\Browser\\' => array($vendorDir . '/ikimea/browser/lib'),
     'HTMLPurifier' => array($vendorDir . '/ezyang/htmlpurifier/library'),
     'Diff' => array($vendorDir . '/phpspec/php-diff/lib'),
     'Codeception\\' => array($vendorDir . '/codeception/specify/src'),

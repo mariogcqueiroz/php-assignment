@@ -14,7 +14,7 @@ use yii\helpers\Html;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="banco-form">
+<div class="form">
 
     <?php $form = ActiveForm::begin();
     $bancos = ArrayHelper::map(
