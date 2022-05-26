@@ -18,7 +18,7 @@ class AgenciaBancariaSearch extends AgenciaBancaria
     {
         return [
             [['id', 'id_banco', 'fone', 'tipo', 'fone1', 'tipo1'], 'integer'],
-            [['endereco', 'agencia', 'nome_agencia'], 'safe'],
+            [['endereco', 'agencia','nome_agencia'], 'safe'],
         ];
     }
 
