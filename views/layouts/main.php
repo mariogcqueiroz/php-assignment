@@ -5,6 +5,8 @@
 
 use app\assets\AppAsset;
 use app\widgets\Alert;
+use webvimark\modules\UserManagement\components\GhostNav;
+use webvimark\modules\UserManagement\UserManagementModule;
 use yii\bootstrap4\Breadcrumbs;
 use yii\bootstrap4\Html;
 use yii\bootstrap4\Nav;
@@ -34,24 +36,35 @@ AppAsset::register($this);
             'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
         ],
     ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav'],
+    echo GhostNav::widget([
+        'options' => ['class' => 'navbar-nav navbar-right'],
+        'encodeLabels'=>false,
+        'activateParents'=>true,
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline'])
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>'
-            )
+            [
+                'label' => 'Financeiro',
+                'items'=>[
+                    ['label'=>'Bancos', 'url'=>['/banco/index']],
+                    ['label'=>'Agências Bancárias', 'url'=>['/agencia-bancaria/index']],
+                ],
+            ],
+            [
+                'label' => 'Usuário',
+                'items'=>[
+                    ['label'=>'Alterar Senha', 'url'=>['/user-management/auth/change-own-password']],
+                    ['label'=>'Confirmação de E-mail', 'url'=>['/user-management/auth/confirm-email']],
+                ],
+            ],
+            [
+                'label' => 'Admin',
+                'items'=>UserManagementModule::menuItems()
+            ],
+
+            Yii::$app->user->isGuest ?
+                ['label' => 'Login','url' => ['/user-management/auth/login']] :
+                ['label' => 'Sair (' . Yii::$app->user->identity->username . ')',
+                    'url' => ['/user-management/auth/logout'],
+                    'linkOptions' => ['data-method' => 'post']],
         ],
     ]);
     NavBar::end();

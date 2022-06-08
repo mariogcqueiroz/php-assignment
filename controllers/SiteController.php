@@ -10,7 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
-class SiteController extends Controller
+class SiteController extends BaseController
 {
     /**
      * {@inheritdoc}
@@ -82,7 +82,7 @@ class SiteController extends Controller
      *
      * @return Response|string
      */
-    public function actionLogin()
+    /*public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
@@ -97,19 +97,19 @@ class SiteController extends Controller
         return $this->render('login', [
             'model' => $model,
         ]);
-    }
+    }*/
 
     /**
      * Logout action.
      *
      * @return Response
      */
-    public function actionLogout()
+    /*public function actionLogout()
     {
         Yii::$app->user->logout();
 
         return $this->goHome();
-    }
+    }*/
 
     /**
      * Displays contact page.

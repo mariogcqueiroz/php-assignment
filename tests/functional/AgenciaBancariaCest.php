@@ -62,6 +62,36 @@ class AgenciaBancariaCest
                 'nome_agencia'=>'Teste',
             ]
         );
-    }
 
+    }
+    public function submiteUpdateCorreto(\FunctionalTester $I)
+    {
+        $I->wantTo("Verify exception for Update");
+        $model = $I->grabRecord('app\models\AgenciaBancaria', [
+            'id_banco'=>'1',
+            'endereco'=>'Endereço teste',
+            'fone'=>'62994883822',
+            'tipo'=>'1',
+            'fone1'=>'62994848833',
+            'tipo1'=>'0',
+            'agencia'=>'456-2',
+            'nome_agencia'=>'Teste',
+        ]);
+        $id = $model->id;
+        $I->amOnRoute('agencia-bancaria/update',['id' => $id]);
+        $I->submitForm('form', [
+            'AgenciaBancaria[id_banco]'=>$model->id_banco,
+            'AgenciaBancaria[endereco]'=>$model->endereco,
+            'AgenciaBancaria[fone]'=>$model->fone,
+            'AgenciaBancaria[tipo]'=>$model->tipo,
+            'AgenciaBancaria[fone1]'=>$model->fone1,
+            'AgenciaBancaria[tipo1]'=>$model->tipo1,
+            'AgenciaBancaria[agencia]'=>'456-3',
+            'AgenciaBancaria[nome_agencia]'=>$model->nome_agencia,
+        ]);
+        $I->seeRecord('app\models\AgenciaBancaria', [
+            'id'=>$model->id,
+            'agencia' => '456-3',
+        ]);
+    }
 }

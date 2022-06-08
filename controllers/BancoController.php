@@ -11,7 +11,7 @@ use yii\filters\VerbFilter;
 /**
  * BancoController implements the CRUD actions for Banco model.
  */
-class BancoController extends Controller
+class BancoController extends BaseController
 {
     /**
      * @inheritDoc

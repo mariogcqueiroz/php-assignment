@@ -11,8 +11,9 @@ use yii\filters\VerbFilter;
 /**
  * AgenciaBancariaController implements the CRUD actions for AgenciaBancaria model.
  */
-class AgenciaBancariaController extends Controller
+class AgenciaBancariaController extends BaseController
 {
+
     /**
      * @inheritDoc
      */

@@ -1,5 +1,6 @@
 <?php
 
+use webvimark\modules\UserManagement\models\User;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -17,7 +18,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+
+        <?php
+        if (User::hasPermission("delete_agencia-bancaria"))
+        echo Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
