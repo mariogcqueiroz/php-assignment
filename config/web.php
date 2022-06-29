@@ -72,7 +72,7 @@ $config = [
                         'mailer' => 'mailer',
                         'levels' => ['error'],
                         'message' => [
-                            'from' => ['mestre.alessandros@gmail.com'],
+                            'from' => ['naoresponda@computacaoifg.com.br'],
                             'to' => ['contact-project+phdcoder-programacao-web-34926235-issue-@incoming.gitlab.com'],
                             'subject' => 'APP ERROR',
                         ]
