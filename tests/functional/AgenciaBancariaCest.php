@@ -2,10 +2,10 @@
 
 class AgenciaBancariaCest
 {
-    /*public function _before(\FunctionalTester $I)
+    public function _before(\FunctionalTester $I)
     {
-
-    }*/
+		
+    }
 
     public function submeterFomularioVazio(\FunctionalTester $I)
     {
@@ -66,7 +66,6 @@ class AgenciaBancariaCest
     }
     public function submiteUpdateCorreto(\FunctionalTester $I)
     {
-        $I->wantTo("Verify exception for Update");
         $model = $I->grabRecord('app\models\AgenciaBancaria', [
             'id_banco'=>'1',
             'endereco'=>'Endereço teste',

@@ -52,6 +52,7 @@ class ComposerStaticInit177cf46861ff5d4d9218624e88606fd1
             'webvimark\\extensions\\DateRangePicker\\' => 37,
             'webvimark\\extensions\\BootstrapSwitch\\' => 37,
             'webvimark\\components\\' => 21,
+            'wbraganca\\dynamicform\\' => 22,
         ),
         's' => 
         array (
@@ -262,6 +263,10 @@ class ComposerStaticInit177cf46861ff5d4d9218624e88606fd1
         'webvimark\\components\\' => 
         array (
             0 => __DIR__ . '/..' . '/webvimark/components',
+        ),
+        'wbraganca\\dynamicform\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wbraganca/yii2-dynamicform',
         ),
         'setasign\\Fpdi\\' => 
         array (

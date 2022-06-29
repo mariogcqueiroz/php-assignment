@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "banco".
@@ -124,5 +125,22 @@ class Banco extends \yii\db\ActiveRecord
     public function getPessoaFisicas1()
     {
         return $this->hasMany(PessoaFisica::className(), ['banco2' => 'id']);
+    }
+
+    /**
+     * Lista todos os bancos que possuem agências cadastradas.
+     * Retorna um array com o resultado encontrado.
+     *
+     * @return array
+     */
+    public static function getBancosWithAgencias()
+    {
+        $bancos = ArrayHelper::map(Banco::find()->rightJoin('agencia_bancaria', 'banco.id = agencia_bancaria.id_banco')->all(), 'id', function ($model) {
+            if ($model['numero']) {
+                return $model['numero'] . ' - ' . $model['nome'];
+            }
+            return $model['nome'];
+        });
+        return $bancos;
     }
 }
