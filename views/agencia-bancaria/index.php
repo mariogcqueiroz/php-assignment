@@ -1,9 +1,10 @@
 <?php
 
+use kartik\grid\GridView;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
-use kartik\grid\Gridview;
+
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\AgenciaBancariaSearch */

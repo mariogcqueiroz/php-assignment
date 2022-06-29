@@ -39,11 +39,19 @@ $config = [
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.gmail.com',
-                'username' => 'mestre.alessandros@gmail.com',
+                'host' => 'smtp.computacaoifg.com.br',
+                'username' => 'naoresponda@computacaoifg.com.br',
                 'password' => trim(getenv('EMAILPWD')),
-                'port' => '465',
-                'encryption' => 'ssl',
+                'port' => '587',
+                'encryption' => 'tls',
+                'streamOptions' => [
+                    'ssl' => [
+                        //necessário pois o servidor é uma merda!!
+                        'allow_self_signed' => true,
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                    ],
+                ],
             ],
         ],
         'log' => [
