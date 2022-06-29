@@ -42,16 +42,8 @@ $config = [
                 'host' => 'smtp.gmail.com',
                 'username' => 'mestre.alessandros@gmail.com',
                 'password' => trim(getenv('EMAILPWD')),
-                'port' => '587',
-                'encryption' => 'tls',
-                'streamOptions' => [
-                    'ssl' => [
-
-                        'allow_self_signed' => true,
-                        'verify_peer' => false,
-                        'verify_peer_name' => false,
-                    ],
-                ],
+                'port' => '465',
+                'encryption' => 'ssl',
             ],
         ],
         'log' => [
