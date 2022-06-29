@@ -34,18 +34,50 @@ $config = [
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure transport
+            // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
-            'useFileTransport' => true,
+            'useFileTransport' => false,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.gmail.com',
+                'username' => 'mestre.alessandros@gmail.com',
+                'password' => getenv('EMAILPWD'),
+                'port' => '587',
+                'encryption' => 'tls',
+                'streamOptions' => [
+                    'ssl' => [
+
+                        'allow_self_signed' => true,
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                    ],
+                ],
+            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
-            'targets' => [
+            'targets' => YII_DEBUG ?[
                 [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
-            ],
+            ] :
+                [
+                    [
+                        'class' => 'yii\log\FileTarget',
+                        'levels' => ['error', 'warning'],
+                    ],
+                    [
+                        'class' => 'yii\log\EmailTarget',
+                        'mailer' => 'mailer',
+                        'levels' => ['error'],
+                        'message' => [
+                            'from' => ['mestre.alessandros@gmail.com'],
+                            'to' => ['contact-project+phdcoder-programacao-web-34926235-issue-@incoming.gitlab.com'],
+                            'subject' => 'APP ERROR',
+                        ]
+                    ],
+                ]
         ],
         'db' => $db,
         /*
