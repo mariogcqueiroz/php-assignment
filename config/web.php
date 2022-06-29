@@ -73,7 +73,7 @@ $config = [
                         'levels' => ['error'],
                         'message' => [
                             'from' => ['naoresponda@computacaoifg.com.br'],
-                            'to' => ['contact-project+phdcoder-programacao-web-34926235-issue-@incoming.gitlab.com'],
+                            'to' => ['incoming+phdcoder-programacao-web-34926235-7jX7EFtsvnsSzC7n3Eoy-issue@incoming.gitlab.com'],
                             'subject' => 'APP ERROR',
                         ]
                     ],
