@@ -4,7 +4,7 @@ class AgenciaBancariaCest
 {
     public function _before(\FunctionalTester $I)
     {
-		
+		$I->amLoggedInAs(1);
     }
 
     public function submeterFomularioVazio(\FunctionalTester $I)
