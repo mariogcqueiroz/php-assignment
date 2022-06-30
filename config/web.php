@@ -75,7 +75,8 @@ $config = [
                             'from' => ['naoresponda@computacaoifg.com.br'],
                             'to' => ['incoming+phdcoder-programacao-web-34926235-7jX7EFtsvnsSzC7n3Eoy-issue@incoming.gitlab.com'],
                             'subject' => 'APP ERROR',
-                        ]
+                        ],
+                        'except' => ['yii\web\HttpException:404'],
                     ],
                 ]
         ],

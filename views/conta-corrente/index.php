@@ -85,9 +85,6 @@ $this->registerJs($search);
                 'filterInputOptions' => ['placeholder' => 'Cd complementares', 'id' => 'grid--aplicacao']
             ],
         'n_conta:ntext',
-        [
-            'class' => 'petersonsilva\easyiigii\extensions\ActionColumn',
-        ],
     ]; 
     ?>
     <?= GridView::widget([
