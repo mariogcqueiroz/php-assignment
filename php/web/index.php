@@ -7,11 +7,11 @@ if ($_SERVER['REQUEST_URI'] === '/feedback') {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $name = $_POST['name'];
         $email = $_POST['email'];
-        $message = $_POST['message'];
+        $message = $_POST['feedback'];
         $feedback = [
             'name' => $name,
             'email' => $email,
-            'message' => $message,
+            'feedback' => $message,
         ];
         array_push($forms_data, $feedback);
         $data = b"Your feedback submitted successfully.";
