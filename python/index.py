@@ -12,12 +12,12 @@ def app(environ, start_response):
         if method == "POST":
             input_obj = environ["wsgi.input"]
             input_length = int(environ["CONTENT_LENGTH"])
-            body = input_obj.read(input_length).decode()
-            data = urllib.parse.parse_qs(body, keep_blank_values=True)
-            req = {
-                "name" : data["name"][0],
-                "email" : data["email"][0],
-                "content" : data["feedback"][0]
+            body = input_obj.read(input_length).decode('utf-8')
+            params = urllib.parse.parse_qs(body, keep_blank_values=True)
+            req = { 
+                "name" : params.get('name', [''])[0],
+                "email" : params.get('email', [''])[0],
+                "message" : params.get('message', [''])[0]
             }
             forms_data.append(req)
             data = b"Your feedback submitted successfully."
