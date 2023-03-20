@@ -13,8 +13,8 @@ if ($_SERVER['REQUEST_URI'] === '/feedback') {
         array_push($forms_data, $feedback);
         if ( strpos($feedback['email'],"@") ){
             $data = "Your feedback submitted successfully.".json_encode($forms_data);
-                $db = new \PDO("pgsql:host=host.docker.internal;dbname=guia;port=5439",
-                    'guia', 'guia2020');
+                $db = new \PDO("pgsql:host=db;dbname=site;port=5432",
+                    'app', 'app2022');
                 $sql = "insert into feedback(nome,email,feedback)
                   values( '".$feedback['name']."','".$feedback['email'].
                     "','".$feedback['feedback']."') ";
