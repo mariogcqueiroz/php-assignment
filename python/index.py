@@ -1,35 +1,67 @@
-import wsgiref.simple_server
-import urllib.parse
+import json
+import cgi
+from wsgiref import simple_server
+
+
 
 def app(environ, start_response):
     path = environ["PATH_INFO"]
     method = environ["REQUEST_METHOD"]
-    data=b""
+    data=""
     forms_data = []
     if path == "/":
-        data = b"Hello, Web!\n"
+        data = "Hello, Web!\n"
     if path == "/feedback":
+        with open("feedback.php", "r") as f:
+            data = f.read()
         if method == "POST":
-            input_obj = environ["wsgi.input"]
-            input_length = int(environ["CONTENT_LENGTH"])
-            body = input_obj.read(input_length).decode('utf-8')
-            params = urllib.parse.parse_qs(body, keep_blank_values=True)
-            req = { 
-                "name" : params.get('name', [''])[0],
-                "email" : params.get('email', [''])[0],
-                "message" : params.get('message', [''])[0]
+            form = cgi.FieldStorage(fp=environ["wsgi.input"], environ=environ)
+            feedback = {
+                "name": form.getvalue("name"),
+                "email": form.getvalue("email"),
+                "feedback": form.getvalue("feedback"),
             }
-            forms_data.append(req)
-            data = b"Your feedback submitted successfully."
+            forms_data.append(feedback)
+            if "@" in feedback["email"]:
+                data = "Your feedback submitted successfully." + json.dumps(forms_data)
+                conn = psycopg2.connect(
+                    host="host.docker.internal",
+                    dbname="guia",
+                    port=5439,
+                    user="guia",
+                    password="guia2020"
+                )
+
+                cur = conn.cursor()
+
+                sql = f"INSERT INTO feedback(nome, email, feedback) " \
+                      f"VALUES ('{feedback['name']}', '{feedback['email']}', '{feedback['feedback']}')"
+
+                cur.execute(sql)
+
+                conn.commit()
+
+                cur.close()
+                conn.close()
+            else:
+                data =data.replace("<?=$feedback['name']?>",feedback['name'])
+                data =data.replace("<?=$feedback['email']?>",feedback['email'])
+                data =data.replace("<?=$feedback['feedback']?>",feedback['feedback'])
+                data =data.replace("<?=$error['email']?>",'Email deve conter @')
+        else:
+            data =data.replace("<?=$feedback['name']?>","")
+            data =data.replace("<?=$feedback['email']?>","")
+            data =data.replace("<?=$feedback['feedback']?>","")
+            data =data.replace("<?=$error['email']?>",'')
             
     start_response("200 OK", [
-        ("Content-Type", "text/plain"),
+        ("Content-Type", "text/html"),
         ("Content-Length", str(len(data)))
     ])
-    return iter([data])
+    return [data.encode()]
 
 if __name__ == '__main__':
-    w_s = wsgiref.simple_server.make_server(
+    w_s = simple_server.make_server(
         host="",
         port=8000,
         app=app

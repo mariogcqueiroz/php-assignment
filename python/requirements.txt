@@ -1,1 +1,2 @@
 gevent
+psycopg2
