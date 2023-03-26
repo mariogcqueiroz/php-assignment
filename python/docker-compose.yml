@@ -1,4 +1,4 @@
-version: '2'
+version: '3.5'
 
 services:
   app:
@@ -10,3 +10,9 @@ services:
     working_dir: /app
     ports:
       - "18000:8000"
+    networks:
+      - fromphpcompose
+networks:
+  fromphpcompose:
+    name: php_default
+    external: true

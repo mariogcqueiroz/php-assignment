@@ -14,7 +14,7 @@ services:
       PGDATA: /var/lib/postgresql/data/pgdata
       LANG: pt_BR.utf8
     ports:
-      - "5659:5432"
+      - "5999:5432"
   app:
     image: dmstr/php-yii2:latest-nginx
     restart: always

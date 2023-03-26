@@ -1,7 +1,7 @@
 import json
 import cgi
 from wsgiref import simple_server
-
+import psycopg2
 
 
 def app(environ, start_response):
@@ -25,11 +25,11 @@ def app(environ, start_response):
             if "@" in feedback["email"]:
                 data = "Your feedback submitted successfully." + json.dumps(forms_data)
                 conn = psycopg2.connect(
-                    host="host.docker.internal",
-                    dbname="guia",
-                    port=5439,
-                    user="guia",
-                    password="guia2020"
+                    host="db",
+                    dbname="site",
+                    port=5432,
+                    user="app",
+                    password="app2022"
                 )
 
                 cur = conn.cursor()
