@@ -1,19 +1,20 @@
 import json
 import cgi
 from wsgiref import simple_server
-import psycopg2
 from orator import DatabaseManager
 from orator import Model
+import psycopg2
+
 
 class Feedback(Model):
     __table__ = 'feedback'
     __timestamps__ = False
 
-
 def app(environ, start_response):
     path = environ["PATH_INFO"]
     method = environ["REQUEST_METHOD"]
     data=""
+    forms_data = []
     if path == "/":
         data = "Hello, Web!\n"
     if path == "/feedback":
@@ -22,12 +23,13 @@ def app(environ, start_response):
         if method == "POST":
             form = cgi.FieldStorage(fp=environ["wsgi.input"], environ=environ)
             feedback = Feedback()
-            feedback.nome= form.getvalue("name")
+            feedback.nome=form.getvalue("name")
             feedback.email=form.getvalue("email")
-            feedback.feedback = form.getvalue("feedback")
+            feedback.feedback=form.getvalue("feedback")
+            forms_data.append(feedback)
             if "@" in feedback.email:
-                feedback.save()
                 data = "Your feedback submitted successfully."
+                feedback.save()
             else:
                 data =data.replace("<?=$feedback['name']?>",feedback.name)
                 data =data.replace("<?=$feedback['email']?>",feedback.email)
@@ -38,7 +40,7 @@ def app(environ, start_response):
             data =data.replace("<?=$feedback['email']?>","")
             data =data.replace("<?=$feedback['feedback']?>","")
             data =data.replace("<?=$error['email']?>",'')
-            
+
     start_response("200 OK", [
         ("Content-Type", "text/html"),
         ("Content-Length", str(len(data)))
@@ -47,8 +49,8 @@ def app(environ, start_response):
 
 if __name__ == '__main__':
     config = {
-        'postgres': {
-            'driver': 'postgres',
+        'pgsql': {
+            'driver': 'pgsql',
             'host': 'db',
             'database': 'site',
             'user': 'app',
@@ -56,6 +58,7 @@ if __name__ == '__main__':
             'prefix': ''
         }
     }
+
     db = DatabaseManager(config)
     Model.set_connection_resolver(db)
     w_s = simple_server.make_server(
@@ -63,6 +66,4 @@ if __name__ == '__main__':
         port=8000,
         app=app
     )
-
-
     w_s.serve_forever()
