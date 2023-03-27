@@ -1,6 +1,24 @@
 <?php
 include_once "../vendor/autoload.php";
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Capsule\Manager as Capsule;
+
+
+
+$capsule = new Capsule;
+$capsule = new Capsule;
+$capsule->addConnection([
+    "driver" => "pgsql",
+    "host" =>"db",
+    "database" => "site",
+    "username" => "app",
+    "password" => "app2022"
+]);
+$capsule->setAsGlobal();
+$capsule->bootEloquent();
+
+
 $data ="";
 $forms_data = [];
 if ($_SERVER['REQUEST_URI'] === '/')
@@ -12,19 +30,10 @@ if ($_SERVER['REQUEST_URI'] === '/feedback') {
             'email' => $_POST['email'],
             'feedback' => $_POST['feedback'],
         ];
-        array_push($forms_data, $feedback);
+
         if ( strpos($feedback['email'],"@") ){
             $data = "Your feedback submitted successfully.".json_encode($forms_data);
-            $db = new \PDO("pgsql:host=db;dbname=site;port=5432",
-                'app', 'app2022');
-            $sql = "insert into feedback(nome,email,feedback)
-                  values( '".$feedback['name']."','".$feedback['email'].
-                "','".$feedback['feedback']."') ";
-            // insert into feedback(nome,email,feedback)
-            //                  values( '".$feedback['name']."','".$feedback['email'].
-            //                "','".$feedback['feedback']."')
-            //$feedback['feedback'] ??  blabal'); drop table feedback;select ('a
-            $db->exec($sql);
+
         }
         else {
             $error['email']="Email deve conter @";
