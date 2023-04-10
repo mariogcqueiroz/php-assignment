@@ -3,31 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de feedback</title>
     <!-- Adiciona o CSS do Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container">
-    <h1>Formulário Fedback</h1>
+    <h1>Fedback <?=$feedback->id ?> </h1>
     <form action="/feedback" method="post" >
         <div class="form-group">
             <label>
                 Nome
-                <input type="text" class="form-control" name="name"  placeholder="Digite seu nome" value="<?=$feedback['name']?>" >
+                <?=$feedback['nome']?>
             </label>
         </div>
         <div class="form-group">
             <label>
                 Email
-                <input type="text" class="form-control" name="email" placeholder="Digite seu email" value="<?=$feedback['email']?>" >
+                <?=$feedback['email']?>
             </label>
-            <p class="text-danger"><?=$error['email']?></p>
         </div>
         <div class="form-group">
             <label>
                 Feddback
-                <input type="text"  class="form-control" name="feedback"  placeholder="Digite seu feedback" value="<?=$feedback['feedback']?>">
+                <?=$feedback['feedback']?>
             </label>
         </div>
         <input type="submit" value="Enviar" class="btn btn-primary" >

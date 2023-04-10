@@ -18,4 +18,5 @@ $params= explode("/", $_SERVER['REQUEST_URI']);
 $name = ucfirst($params[1])."Controller";
 require_once __DIR__."/../controllers/".$name.".php";
 $instance = new $name();
-$instance->{$params[2]}();
+$instance->{$params[2]}($params[3]??null);
+
