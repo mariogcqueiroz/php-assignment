@@ -23,11 +23,23 @@ services:
       - .:/app
     working_dir: /app
     environment:
+      - PHP_ENABLE_XDEBUG=1
       - DB_DATABASE= $DB
       - DB_USERNAME= $USER
       - DB_PASSWORD= $PASS
     ports:
       - "7880:80"
+    #Se seu host roda linux, substitua host.docker.internal com o resultado do comando abaixo executado dentro do container e restarte o container
+    ## $ ip route | grep docker0 | awk '{print $9}'
+    command: bash -c "chown -R www-data:www-data  /app/models
+      && chown -R www-data:www-data  /app/controllers
+      && chmod -R 755 /app/models
+      && chmod -R 755 /app/views
+      && chmod -R 755 /app/controllers
+      && chmod +x /app/yii
+      && ./yii migrate --interactive=0
+      && export XDEBUG_CONFIG=\"remote_connect_back=0 remote_enable=1 remote_host=host.docker.internal\"
+      && supervisord -c  /etc/supervisor/supervisord.conf"
 volumes:
   base_cliente:
     external: true
