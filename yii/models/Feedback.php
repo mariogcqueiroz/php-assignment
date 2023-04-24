@@ -30,6 +30,7 @@ class Feedback extends \yii\db\ActiveRecord
         return [
             [['nome', 'email', 'feedback'], 'required'],
             [['email'],'email'],
+            [['idade'],'integer','min'=>0,'max' => 120],
             [['nome', 'email', 'feedback'], 'string'],
         ];
     }

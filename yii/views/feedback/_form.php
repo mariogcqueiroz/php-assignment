@@ -14,8 +14,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nome')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'email')->textarea(['rows' => 6]) ?>
-
+    <?= $form->field($model, 'email')->input(['rows' => 6]) ?>
+    <?= $form->field($model, 'idade')->input(['rows' => 6]) ?>
     <?= $form->field($model, 'feedback')->textarea(['rows' => 6]) ?>
 
     <div class="form-group">

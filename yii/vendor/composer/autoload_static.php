@@ -33,7 +33,7 @@ class ComposerStaticInitded4c82a977085951d196a72159b9f6e
             'yii\\faker\\' => 10,
             'yii\\debug\\' => 10,
             'yii\\composer\\' => 13,
-            'yii\\bootstrap\\' => 14,
+            'yii\\bootstrap5\\' => 15,
             'yii\\' => 4,
         ),
         'c' => 
@@ -118,9 +118,9 @@ class ComposerStaticInitded4c82a977085951d196a72159b9f6e
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-composer',
         ),
-        'yii\\bootstrap\\' => 
+        'yii\\bootstrap5\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap5/src',
         ),
         'yii\\' => 
         array (
@@ -216,8 +216,8 @@ class ComposerStaticInitded4c82a977085951d196a72159b9f6e
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\EventDispatcher\\' => 
         array (
