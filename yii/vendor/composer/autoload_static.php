@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitded4c82a977085951d196a72159b9f6e
+class ComposerStaticInit743be01fce606022e2a861eca581fc85
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -15,11 +15,12 @@ class ComposerStaticInitded4c82a977085951d196a72159b9f6e
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
+        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
+        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
-        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         'e3b2795a8a512b6083af088fb53afe6c' => __DIR__ . '/..' . '/codeception/codeception/functions.php',
         '77e7c5c0b74965caa0fbb0a094b7713f' => __DIR__ . '/..' . '/codeception/verify/src/Codeception/bootstrap.php',
@@ -33,8 +34,20 @@ class ComposerStaticInitded4c82a977085951d196a72159b9f6e
             'yii\\faker\\' => 10,
             'yii\\debug\\' => 10,
             'yii\\composer\\' => 13,
+            'yii\\bootstrap\\' => 14,
             'yii\\bootstrap5\\' => 15,
             'yii\\' => 4,
+        ),
+        'w' => 
+        array (
+            'webvimark\\modules\\UserManagement\\' => 33,
+            'webvimark\\image\\' => 16,
+            'webvimark\\helpers\\' => 18,
+            'webvimark\\extensions\\GridPageSize\\' => 34,
+            'webvimark\\extensions\\GridBulkActions\\' => 37,
+            'webvimark\\extensions\\DateRangePicker\\' => 37,
+            'webvimark\\extensions\\BootstrapSwitch\\' => 37,
+            'webvimark\\components\\' => 21,
         ),
         'c' => 
         array (
@@ -118,6 +131,10 @@ class ComposerStaticInitded4c82a977085951d196a72159b9f6e
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-composer',
         ),
+        'yii\\bootstrap\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap',
+        ),
         'yii\\bootstrap5\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap5/src',
@@ -125,6 +142,38 @@ class ComposerStaticInitded4c82a977085951d196a72159b9f6e
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'webvimark\\modules\\UserManagement\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webvimark/module-user-management',
+        ),
+        'webvimark\\image\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webvimark/image',
+        ),
+        'webvimark\\helpers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webvimark/helpers',
+        ),
+        'webvimark\\extensions\\GridPageSize\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webvimark/grid-page-size',
+        ),
+        'webvimark\\extensions\\GridBulkActions\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webvimark/grid-bulk-actions',
+        ),
+        'webvimark\\extensions\\DateRangePicker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webvimark/date-range-picker',
+        ),
+        'webvimark\\extensions\\BootstrapSwitch\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webvimark/bootstrap-switch',
+        ),
+        'webvimark\\components\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webvimark/components',
         ),
         'cebe\\markdown\\' => 
         array (
@@ -272,6 +321,13 @@ class ComposerStaticInitded4c82a977085951d196a72159b9f6e
     );
 
     public static $prefixesPsr0 = array (
+        'I' => 
+        array (
+            'Ikimea\\Browser\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/ikimea/browser/lib',
+            ),
+        ),
         'H' => 
         array (
             'HTMLPurifier' => 
@@ -705,6 +761,7 @@ class ComposerStaticInitded4c82a977085951d196a72159b9f6e
         'PharIo\\Manifest\\ManifestLoader' => __DIR__ . '/..' . '/phar-io/manifest/src/ManifestLoader.php',
         'PharIo\\Manifest\\ManifestLoaderException' => __DIR__ . '/..' . '/phar-io/manifest/src/exceptions/ManifestLoaderException.php',
         'PharIo\\Manifest\\ManifestSerializer' => __DIR__ . '/..' . '/phar-io/manifest/src/ManifestSerializer.php',
+        'PharIo\\Manifest\\NoEmailAddressException' => __DIR__ . '/..' . '/phar-io/manifest/src/exceptions/NoEmailAdressException.php',
         'PharIo\\Manifest\\PhpElement' => __DIR__ . '/..' . '/phar-io/manifest/src/xml/PhpElement.php',
         'PharIo\\Manifest\\PhpExtensionRequirement' => __DIR__ . '/..' . '/phar-io/manifest/src/values/PhpExtensionRequirement.php',
         'PharIo\\Manifest\\PhpVersionRequirement' => __DIR__ . '/..' . '/phar-io/manifest/src/values/PhpVersionRequirement.php',
@@ -952,10 +1009,10 @@ class ComposerStaticInitded4c82a977085951d196a72159b9f6e
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitded4c82a977085951d196a72159b9f6e::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitded4c82a977085951d196a72159b9f6e::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitded4c82a977085951d196a72159b9f6e::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitded4c82a977085951d196a72159b9f6e::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit743be01fce606022e2a861eca581fc85::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit743be01fce606022e2a861eca581fc85::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit743be01fce606022e2a861eca581fc85::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit743be01fce606022e2a861eca581fc85::$classMap;
 
         }, null, ClassLoader::class);
     }
