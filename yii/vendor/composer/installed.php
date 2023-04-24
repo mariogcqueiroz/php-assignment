@@ -241,6 +241,15 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'npm-asset/bootstrap' => array(
+            'pretty_version' => '4.6.2',
+            'version' => '4.6.2.0',
+            'reference' => NULL,
+            'type' => 'npm-asset',
+            'install_path' => __DIR__ . '/../npm-asset/bootstrap',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'paragonie/random_compat' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
@@ -903,6 +912,17 @@
             'type' => 'yii2-extension',
             'install_path' => __DIR__ . '/../yiisoft/yii2-bootstrap',
             'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'yiisoft/yii2-bootstrap4' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '5b48c2b3cf4d5d9d32e5cfba779cddf3efe197c7',
+            'type' => 'yii2-extension',
+            'install_path' => __DIR__ . '/../yiisoft/yii2-bootstrap4',
+            'aliases' => array(
+                0 => '1.0.x-dev',
+            ),
             'dev_requirement' => false,
         ),
         'yiisoft/yii2-bootstrap5' => array(
