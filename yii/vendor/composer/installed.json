@@ -577,6 +577,67 @@
             "install-path": "../codeception/module-filesystem"
         },
         {
+            "name": "codeception/module-webdriver",
+            "version": "2.0.x-dev",
+            "version_normalized": "2.0.9999999.9999999-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Codeception/module-webdriver.git",
+                "reference": "8f555fa9037ac0f8dae62b2d6ced5cee31811b28"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Codeception/module-webdriver/zipball/8f555fa9037ac0f8dae62b2d6ced5cee31811b28",
+                "reference": "8f555fa9037ac0f8dae62b2d6ced5cee31811b28",
+                "shasum": ""
+            },
+            "require": {
+                "codeception/codeception": "^4.0",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": "^7.4 | ^8.0",
+                "php-webdriver/webdriver": "^1.8.0"
+            },
+            "suggest": {
+                "codeception/phpbuiltinserver": "Start and stop PHP built-in web server for your tests"
+            },
+            "time": "2022-09-12T05:08:38+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Bodnarchuk"
+                },
+                {
+                    "name": "Gintautas Miselis"
+                },
+                {
+                    "name": "Zaahid Bateson"
+                }
+            ],
+            "description": "WebDriver module for Codeception",
+            "homepage": "https://codeception.com/",
+            "keywords": [
+                "acceptance-testing",
+                "browser-testing",
+                "codeception"
+            ],
+            "support": {
+                "issues": "https://github.com/Codeception/module-webdriver/issues",
+                "source": "https://github.com/Codeception/module-webdriver/tree/2.0"
+            },
+            "install-path": "../codeception/module-webdriver"
+        },
+        {
             "name": "codeception/module-yii2",
             "version": "1.1.5",
             "version_normalized": "1.1.5.0",
@@ -1643,6 +1704,75 @@
             "install-path": "../phar-io/version"
         },
         {
+            "name": "php-webdriver/webdriver",
+            "version": "1.14.0",
+            "version_normalized": "1.14.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-webdriver/php-webdriver.git",
+                "reference": "3ea4f924afb43056bf9c630509e657d951608563"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-webdriver/php-webdriver/zipball/3ea4f924afb43056bf9c630509e657d951608563",
+                "reference": "3ea4f924afb43056bf9c630509e657d951608563",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-zip": "*",
+                "php": "^7.3 || ^8.0",
+                "symfony/polyfill-mbstring": "^1.12",
+                "symfony/process": "^5.0 || ^6.0"
+            },
+            "replace": {
+                "facebook/webdriver": "*"
+            },
+            "require-dev": {
+                "ergebnis/composer-normalize": "^2.20.0",
+                "ondram/ci-detector": "^4.0",
+                "php-coveralls/php-coveralls": "^2.4",
+                "php-mock/php-mock-phpunit": "^2.0",
+                "php-parallel-lint/php-parallel-lint": "^1.2",
+                "phpunit/phpunit": "^9.3",
+                "squizlabs/php_codesniffer": "^3.5",
+                "symfony/var-dumper": "^5.0 || ^6.0"
+            },
+            "suggest": {
+                "ext-SimpleXML": "For Firefox profile creation"
+            },
+            "time": "2023-02-09T12:12:19+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "lib/Exception/TimeoutException.php"
+                ],
+                "psr-4": {
+                    "Facebook\\WebDriver\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A PHP client for Selenium WebDriver. Previously facebook/webdriver.",
+            "homepage": "https://github.com/php-webdriver/php-webdriver",
+            "keywords": [
+                "Chromedriver",
+                "geckodriver",
+                "php",
+                "selenium",
+                "webdriver"
+            ],
+            "support": {
+                "issues": "https://github.com/php-webdriver/php-webdriver/issues",
+                "source": "https://github.com/php-webdriver/php-webdriver/tree/1.14.0"
+            },
+            "install-path": "../php-webdriver/webdriver"
+        },
+        {
             "name": "phpspec/php-diff",
             "version": "v1.1.3",
             "version_normalized": "1.1.3.0",
@@ -1693,12 +1823,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "db887088b40ae43d17b9913886df860a7035145d"
+                "reference": "565b4df47bb8992d1adbe06cb4c2e36df5517f54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/db887088b40ae43d17b9913886df860a7035145d",
-                "reference": "db887088b40ae43d17b9913886df860a7035145d",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/565b4df47bb8992d1adbe06cb4c2e36df5517f54",
+                "reference": "565b4df47bb8992d1adbe06cb4c2e36df5517f54",
                 "shasum": ""
             },
             "require": {
@@ -1723,7 +1853,7 @@
                 "ext-pcov": "PHP extension that provides line coverage",
                 "ext-xdebug": "PHP extension that provides line coverage as well as branch and path coverage"
             },
-            "time": "2023-04-04T09:22:25+00:00",
+            "time": "2023-05-07T06:58:20+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2769,17 +2899,17 @@
         },
         {
             "name": "sebastian/diff",
-            "version": "4.0.4",
-            "version_normalized": "4.0.4.0",
+            "version": "4.0.x-dev",
+            "version_normalized": "4.0.9999999.9999999-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "3461e3fccc7cfdfc2720be910d3bd73c69be590d"
+                "reference": "74be17022044ebaaecfdf0c5cd504fc9cd5a7131"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/3461e3fccc7cfdfc2720be910d3bd73c69be590d",
-                "reference": "3461e3fccc7cfdfc2720be910d3bd73c69be590d",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/74be17022044ebaaecfdf0c5cd504fc9cd5a7131",
+                "reference": "74be17022044ebaaecfdf0c5cd504fc9cd5a7131",
                 "shasum": ""
             },
             "require": {
@@ -2789,7 +2919,7 @@
                 "phpunit/phpunit": "^9.3",
                 "symfony/process": "^4.2 || ^5"
             },
-            "time": "2020-10-26T13:10:38+00:00",
+            "time": "2023-05-07T05:35:17+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2826,7 +2956,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/diff/issues",
-                "source": "https://github.com/sebastianbergmann/diff/tree/4.0.4"
+                "source": "https://github.com/sebastianbergmann/diff/tree/4.0"
             },
             "funding": [
                 {
@@ -3545,12 +3675,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "930de4346ba192c482661d700bf5b9a05620eeb2"
+                "reference": "9a16a1cb519da4c7fc4333aad490149c229373cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/930de4346ba192c482661d700bf5b9a05620eeb2",
-                "reference": "930de4346ba192c482661d700bf5b9a05620eeb2",
+                "url": "https://api.github.com/repos/symfony/console/zipball/9a16a1cb519da4c7fc4333aad490149c229373cd",
+                "reference": "9a16a1cb519da4c7fc4333aad490149c229373cd",
                 "shasum": ""
             },
             "require": {
@@ -3588,7 +3718,7 @@
                 "symfony/lock": "",
                 "symfony/process": ""
             },
-            "time": "2023-04-21T18:01:19+00:00",
+            "time": "2023-05-05T10:56:57+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -4949,6 +5079,70 @@
                 }
             ],
             "install-path": "../symfony/polyfill-php80"
+        },
+        {
+            "name": "symfony/process",
+            "version": "6.3.x-dev",
+            "version_normalized": "6.3.9999999.9999999-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/process.git",
+                "reference": "89ac295dc344cc0cd802dd303cb2598e184e7014"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/process/zipball/89ac295dc344cc0cd802dd303cb2598e184e7014",
+                "reference": "89ac295dc344cc0cd802dd303cb2598e184e7014",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "time": "2023-04-28T15:57:00+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Process\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Executes commands in sub-processes",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/process/tree/6.3"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/process"
         },
         {
             "name": "symfony/service-contracts",
@@ -6364,60 +6558,15 @@
     ],
     "dev": true,
     "dev-package-names": [
-        "behat/gherkin",
-        "codeception/codeception",
-        "codeception/lib-asserts",
         "codeception/lib-innerbrowser",
         "codeception/module-asserts",
         "codeception/module-filesystem",
         "codeception/module-yii2",
-        "codeception/phpunit-wrapper",
-        "codeception/stub",
         "codeception/verify",
-        "doctrine/instantiator",
         "fakerphp/faker",
-        "guzzlehttp/psr7",
-        "myclabs/deep-copy",
-        "nikic/php-parser",
-        "phar-io/manifest",
-        "phar-io/version",
         "phpspec/php-diff",
-        "phpunit/php-code-coverage",
-        "phpunit/php-file-iterator",
-        "phpunit/php-invoker",
-        "phpunit/php-text-template",
-        "phpunit/php-timer",
-        "phpunit/phpunit",
-        "psr/http-factory",
-        "psr/http-message",
-        "ralouphie/getallheaders",
-        "sebastian/cli-parser",
-        "sebastian/code-unit",
-        "sebastian/code-unit-reverse-lookup",
-        "sebastian/comparator",
-        "sebastian/complexity",
-        "sebastian/diff",
-        "sebastian/environment",
-        "sebastian/exporter",
-        "sebastian/global-state",
-        "sebastian/lines-of-code",
-        "sebastian/object-enumerator",
-        "sebastian/object-reflector",
-        "sebastian/recursion-context",
-        "sebastian/resource-operations",
-        "sebastian/type",
-        "sebastian/version",
         "symfony/browser-kit",
-        "symfony/console",
-        "symfony/css-selector",
         "symfony/dom-crawler",
-        "symfony/finder",
-        "symfony/polyfill-ctype",
-        "symfony/polyfill-intl-grapheme",
-        "symfony/polyfill-php73",
-        "symfony/string",
-        "symfony/yaml",
-        "theseer/tokenizer",
         "yiisoft/yii2-debug",
         "yiisoft/yii2-faker",
         "yiisoft/yii2-gii"
