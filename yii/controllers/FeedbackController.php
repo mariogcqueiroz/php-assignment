@@ -4,7 +4,9 @@ namespace app\controllers;
 
 use app\models\Feedback;
 use app\models\FeedbackSearch;
+use Yii;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -73,6 +75,7 @@ class FeedbackController extends Controller
         $model = new Feedback();
 
         if ($this->request->isPost) {
+
             if ($model->load($this->request->post()) && $model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
@@ -96,8 +99,15 @@ class FeedbackController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($this->request->isPost && $model->load($this->request->post()))
+        {
+            if (Yii::$app->user->identity->email==$model->email) {
+                if ($model->save()) {
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
+            }else{
+                throw new ForbiddenHttpException ('Não pode alterar um dado que não é seu');
+            }
         }
 
         return $this->render('update', [
