@@ -69,20 +69,26 @@
         },
         {
             "name": "bower-asset/bootstrap",
-            "version": "v5.3.0-alpha3",
-            "version_normalized": "5.3.0.0-alpha3",
+            "version": "v3.4.1",
+            "version_normalized": "3.4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "ac576614a5515e429f27e756fad81d5aa05e95a6"
+                "reference": "68b0d231a13201eb14acd3dc84e51543d16e5f7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/ac576614a5515e429f27e756fad81d5aa05e95a6",
-                "reference": "ac576614a5515e429f27e756fad81d5aa05e95a6"
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/68b0d231a13201eb14acd3dc84e51543d16e5f7e",
+                "reference": "68b0d231a13201eb14acd3dc84e51543d16e5f7e"
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.9.1,<4.0"
             },
             "type": "bower-asset",
             "installation-source": "dist",
+            "license": [
+                "MIT"
+            ],
             "install-path": "../bower-asset/bootstrap"
         },
         {
@@ -1142,12 +1148,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FakerPHP/Faker.git",
-                "reference": "1a735f050e3246fadccdf8f684122b1f97e4bddb"
+                "reference": "cd773f417ded084059c010bc672c35c242b7bdc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/1a735f050e3246fadccdf8f684122b1f97e4bddb",
-                "reference": "1a735f050e3246fadccdf8f684122b1f97e4bddb",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/cd773f417ded084059c010bc672c35c242b7bdc6",
+                "reference": "cd773f417ded084059c010bc672c35c242b7bdc6",
                 "shasum": ""
             },
             "require": {
@@ -1172,7 +1178,7 @@
                 "ext-iconv": "Required by Faker\\Provider\\ru_RU\\Text::realText() for generating real Russian text.",
                 "ext-mbstring": "Required for multibyte Unicode string functionality."
             },
-            "time": "2023-04-21T22:02:22+00:00",
+            "time": "2023-05-02T08:04:15+00:00",
             "default-branch": true,
             "type": "library",
             "extra": {
@@ -1504,21 +1510,6 @@
                 "source": "https://github.com/nikic/PHP-Parser/tree/4.x"
             },
             "install-path": "../nikic/php-parser"
-        },
-        {
-            "name": "npm-asset/bootstrap",
-            "version": "4.6.2",
-            "version_normalized": "4.6.2.0",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/bootstrap/-/bootstrap-4.6.2.tgz"
-            },
-            "type": "npm-asset",
-            "installation-source": "dist",
-            "license": [
-                "MIT"
-            ],
-            "install-path": "../npm-asset/bootstrap"
         },
         {
             "name": "paragonie/random_compat",
@@ -4231,12 +4222,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mailer.git",
-                "reference": "a098a3fe7f42a30235b862162090900cbf787ff6"
+                "reference": "dd614e6b469fdf64c14543d50bc3bb56e05455f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mailer/zipball/a098a3fe7f42a30235b862162090900cbf787ff6",
-                "reference": "a098a3fe7f42a30235b862162090900cbf787ff6",
+                "url": "https://api.github.com/repos/symfony/mailer/zipball/dd614e6b469fdf64c14543d50bc3bb56e05455f7",
+                "reference": "dd614e6b469fdf64c14543d50bc3bb56e05455f7",
                 "shasum": ""
             },
             "require": {
@@ -4261,7 +4252,7 @@
                 "symfony/messenger": "^6.2",
                 "symfony/twig-bridge": "^6.2"
             },
-            "time": "2023-04-21T14:41:17+00:00",
+            "time": "2023-04-24T14:22:26+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -4314,12 +4305,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "856ef880aeb949fae82aee6e88f7e5b8b3e5a944"
+                "reference": "7b5d2121858cd6efbed778abce9cfdd7ab1f62ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/856ef880aeb949fae82aee6e88f7e5b8b3e5a944",
-                "reference": "856ef880aeb949fae82aee6e88f7e5b8b3e5a944",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/7b5d2121858cd6efbed778abce9cfdd7ab1f62ad",
+                "reference": "7b5d2121858cd6efbed778abce9cfdd7ab1f62ad",
                 "shasum": ""
             },
             "require": {
@@ -4343,7 +4334,7 @@
                 "symfony/property-info": "^5.4|^6.0",
                 "symfony/serializer": "^6.2"
             },
-            "time": "2023-04-22T08:23:52+00:00",
+            "time": "2023-04-28T15:57:00+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -5454,55 +5445,6 @@
             "install-path": "../theseer/tokenizer"
         },
         {
-            "name": "twbs/bootstrap",
-            "version": "v3.0.3",
-            "version_normalized": "3.0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "6d03173a1aad98e75f7d33e65b411c519176c59a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/6d03173a1aad98e75f7d33e65b411c519176c59a",
-                "reference": "6d03173a1aad98e75f7d33e65b411c519176c59a",
-                "shasum": ""
-            },
-            "time": "2013-12-05T16:09:10+00:00",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0.x-dev"
-                }
-            },
-            "installation-source": "dist",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Jacob Thornton",
-                    "email": "jacobthornton@gmail.com"
-                },
-                {
-                    "name": "Mark Otto",
-                    "email": "markdotto@gmail.com"
-                }
-            ],
-            "description": "Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.",
-            "homepage": "http://getbootstrap.com",
-            "keywords": [
-                "bootstrap",
-                "css"
-            ],
-            "support": {
-                "issues": "https://github.com/twbs/bootstrap/issues",
-                "source": "https://github.com/twbs/bootstrap/tree/v3.0.3"
-            },
-            "install-path": "../twbs/bootstrap"
-        },
-        {
             "name": "webvimark/bootstrap-switch",
             "version": "1.0.0",
             "version_normalized": "1.0.0.0",
@@ -5892,87 +5834,33 @@
         },
         {
             "name": "yiisoft/yii2-bootstrap",
-            "version": "2.0.0-beta",
-            "version_normalized": "2.0.0.0-beta",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "d2518d1f6fb0b3e0e3aba50b9c35f56d580eb3c4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/d2518d1f6fb0b3e0e3aba50b9c35f56d580eb3c4",
-                "reference": "d2518d1f6fb0b3e0e3aba50b9c35f56d580eb3c4",
-                "shasum": ""
-            },
-            "require": {
-                "twbs/bootstrap": "3.0.*",
-                "yiisoft/yii2": "*"
-            },
-            "time": "2014-04-13T21:58:59+00:00",
-            "type": "yii2-extension",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "yii\\bootstrap\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Qiang Xue",
-                    "email": "qiang.xue@gmail.com",
-                    "homepage": "http://www.yiiframework.com/",
-                    "role": "Founder and project lead"
-                }
-            ],
-            "description": "The Twitter Bootstrap extension for the Yii framework",
-            "keywords": [
-                "bootstrap",
-                "yii2"
-            ],
-            "support": {
-                "forum": "http://www.yiiframework.com/forum/",
-                "irc": "irc://irc.freenode.net/yii",
-                "issues": "https://github.com/yiisoft/yii2/issues?labels=ext%3Abootstrap",
-                "source": "https://github.com/yiisoft/yii2",
-                "wiki": "http://www.yiiframework.com/wiki/"
-            },
-            "install-path": "../yiisoft/yii2-bootstrap"
-        },
-        {
-            "name": "yiisoft/yii2-bootstrap4",
             "version": "dev-master",
             "version_normalized": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/yiisoft/yii2-bootstrap4.git",
-                "reference": "5b48c2b3cf4d5d9d32e5cfba779cddf3efe197c7"
+                "url": "https://github.com/yiisoft/yii2-bootstrap.git",
+                "reference": "59a1f4d878edf701a2c235a209fb79ed8fe1b10a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap4/zipball/5b48c2b3cf4d5d9d32e5cfba779cddf3efe197c7",
-                "reference": "5b48c2b3cf4d5d9d32e5cfba779cddf3efe197c7",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/59a1f4d878edf701a2c235a209fb79ed8fe1b10a",
+                "reference": "59a1f4d878edf701a2c235a209fb79ed8fe1b10a",
                 "shasum": ""
             },
             "require": {
-                "npm-asset/bootstrap": "^4.3",
-                "yiisoft/yii2": "^2.0.43"
+                "bower-asset/bootstrap": "3.4.* | 3.3.* | 3.2.* | 3.1.*",
+                "yiisoft/yii2": "~2.0.6"
             },
             "require-dev": {
                 "cweagans/composer-patches": "^1.7",
-                "phpunit/phpunit": "4.8.34",
-                "yiisoft/yii2-coding-standards": "~2.0"
+                "phpunit/phpunit": "4.8.34"
             },
-            "time": "2023-01-07T19:53:47+00:00",
+            "time": "2023-01-16T07:32:27+00:00",
             "default-branch": true,
             "type": "yii2-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "2.0.x-dev"
                 },
                 "patches": {
                     "phpunit/phpunit-mock-objects": {
@@ -5987,7 +5875,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "yii\\bootstrap4\\": "src"
+                    "yii\\bootstrap\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6012,23 +5900,18 @@
                 {
                     "name": "Paul Klimov",
                     "email": "klimov.paul@gmail.com"
-                },
-                {
-                    "name": "Simon Karlen",
-                    "email": "simi.albi@outlook.com"
                 }
             ],
             "description": "The Twitter Bootstrap extension for the Yii framework",
             "keywords": [
                 "bootstrap",
-                "bootstrap4",
                 "yii2"
             ],
             "support": {
                 "forum": "https://www.yiiframework.com/forum/",
                 "irc": "irc://irc.freenode.net/yii",
-                "issues": "https://github.com/yiisoft/yii2-bootstrap4/issues",
-                "source": "https://github.com/yiisoft/yii2-bootstrap4",
+                "issues": "https://github.com/yiisoft/yii2-bootstrap/issues",
+                "source": "https://github.com/yiisoft/yii2-bootstrap",
                 "wiki": "https://www.yiiframework.com/wiki/"
             },
             "funding": [
@@ -6041,96 +5924,11 @@
                     "type": "open_collective"
                 },
                 {
-                    "url": "https://tidelift.com/funding/github/packagist/yiisoft/yii2-bootstrap4",
+                    "url": "https://tidelift.com/funding/github/packagist/yiisoft/yii2-bootstrap",
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../yiisoft/yii2-bootstrap4"
-        },
-        {
-            "name": "yiisoft/yii2-bootstrap5",
-            "version": "dev-master",
-            "version_normalized": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/yii2-bootstrap5.git",
-                "reference": "5d0e4911aa3cb19902af50559b99f35fbb8953bb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap5/zipball/5d0e4911aa3cb19902af50559b99f35fbb8953bb",
-                "reference": "5d0e4911aa3cb19902af50559b99f35fbb8953bb",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/bootstrap": "^5.1.0",
-                "ext-json": "*",
-                "php": ">=7.0",
-                "yiisoft/yii2": "^2.0.42"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^6.5.14",
-                "twbs/bootstrap-icons": "^1.7.2",
-                "yiisoft/yii2-coding-standards": "~2.0"
-            },
-            "suggest": {
-                "twbs/bootstrap-icons": "Add this package to the `require` section of your `composer.json` if you'd like to use the bootstrap icon asset."
-            },
-            "time": "2023-01-03T09:33:06+00:00",
-            "default-branch": true,
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                },
-                "bootstrap": "yii\\bootstrap5\\i18n\\TranslationBootstrap"
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "yii\\bootstrap5\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Sergey Zhukovskiy",
-                    "email": "mylistryx@gmail.com",
-                    "homepage": "https://net23.ru/"
-                },
-                {
-                    "name": "Simon Karlen",
-                    "email": "simi.albi@outlook.com"
-                }
-            ],
-            "description": "The Twitter Bootstrap v5 extension for the Yii framework",
-            "keywords": [
-                "bootstrap",
-                "bootstrap5",
-                "yii2"
-            ],
-            "support": {
-                "issues": "https://github.com/yiisoft/yii2-bootstrap5/issues",
-                "source": "https://github.com/yiisoft/yii2-bootstrap5"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/yiisoft",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/yiisoft",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/yiisoft/yii2-bootstrap5",
-                    "type": "tidelift"
-                }
-            ],
-            "install-path": "../yiisoft/yii2-bootstrap5"
+            "install-path": "../yiisoft/yii2-bootstrap"
         },
         {
             "name": "yiisoft/yii2-composer",

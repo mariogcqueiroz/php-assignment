@@ -16,9 +16,7 @@
     "require": {
         "php": ">=7.4.0",
         "yiisoft/yii2": "~2.0.45",
-        "yiisoft/yii2-bootstrap5": "@dev",
         "yiisoft/yii2-bootstrap": "@dev",
-        "yiisoft/yii2-bootstrap4": "dev-master",
         "yiisoft/yii2-symfonymailer": "~2.0.3",
         "webvimark/module-user-management": "dev-master",
         "codeception/module-webdriver": "^2.0.4"

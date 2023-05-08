@@ -2,3 +2,4 @@
 /python/.idea
 /yii/.idea
 /yii/assets
+!/yii/assets/AppAsset.php
