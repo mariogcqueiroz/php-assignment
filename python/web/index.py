@@ -6,11 +6,11 @@ def app(environ, start_response):
     if path == "/app":
         data = b"Hello, Web!\n"
     if path == "/app/feedback":
-        
-        start_response("200 OK", [
-           ("Content-Type", "text/plain"),
-           ("Content-Length", str(len(data)))
-        ])
+
+    start_response("200 OK", [
+        ("Content-Type", "text/plain"),
+        ("Content-Length", str(len(data)))
+    ])
     return [data]
 
 if __name__ == '__main__':
