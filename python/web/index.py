@@ -1,4 +1,6 @@
+import cgi
 from wsgiref import simple_server
+
 def app(environ, start_response):
     path = environ["PATH_INFO"]
     method = environ["REQUEST_METHOD"]
@@ -6,7 +8,9 @@ def app(environ, start_response):
     if path == "/app":
         data = b"Hello, Web!\n"
     if path == "/app/feedback":
-
+        if method == "POST":
+            body = cgi.FieldStorage(fp=environ["wsgi.input"], environ=environ)
+            data = body.getvalue('name') + " " + body.getvalue('email')+ " " + body.getvalue('feedback')
     start_response("200 OK", [
         ("Content-Type", "text/plain"),
         ("Content-Length", str(len(data)))
