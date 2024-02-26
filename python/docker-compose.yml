@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
   nginx:
@@ -9,7 +9,7 @@ services:
     ports:
       - "6680:80"
   app:
-    build: local/python-app
+    build: .
     restart: always
     container_name: pweb-py
     volumes:

@@ -1,5 +1,4 @@
 from wsgiref import simple_server
-
 def app(environ, start_response):
     data = b"Hello Web!\n"
     start_response("200 OK", [
