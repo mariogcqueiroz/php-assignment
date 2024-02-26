@@ -15,7 +15,7 @@ def app(environ, start_response):
         ("Content-Type", "text/plain"),
         ("Content-Length", str(len(data)))
     ])
-    return [data]
+    return [data.encode('utf-8')]
 
 if __name__ == '__main__':
     w_s = simple_server.make_server(
