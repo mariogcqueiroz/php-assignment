@@ -9,4 +9,4 @@ if ($path == "/app") {
     $feedback = $_POST['feedback'];
     echo "$name $email $feedback";
 }
-?>
+
