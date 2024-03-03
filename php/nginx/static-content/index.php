@@ -6,6 +6,6 @@
 </head>
 <body>
 <h1>This is a useless WEB Page</h1>
-<p>Hello !</p>
+<p>Hello php!</p>
 </body>
 </html>
