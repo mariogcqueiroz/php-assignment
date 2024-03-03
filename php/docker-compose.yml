@@ -8,9 +8,14 @@ services:
       - ./nginx/static-content:/usr/share/nginx/html:ro
     ports:
       - "6680:80"
+    links:
+      - app
+
   app:
     build: .
     volumes:
-      - ./web:/usr/share/nginx/html
-      - ./config:/usr/local/etc/php
-
+      - ./web:/app:ro
+      #- ./config:/usr/local/etc/php
+    ports:
+      - "9000:9000"
+    working_dir: /app
